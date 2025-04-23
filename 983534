@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 原有 meta 标签 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="中考倒计时页面，实时显示距离中考的时间，并提供随机激励语。">
+    <meta name="keywords" content="中考倒计时, 激励语, 中考备考">
+    <title>中考倒计时</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* 原有样式 */
+        body { /* 原样式 */ }
+        .countdown { /* 原样式 */ }
+        .countdown-digit { /* 原样式 */ }
+        .countdown-label { /* 原样式 */ }
+        .motivation { /* 原样式 */ }
+        .author-info { /* 原样式 */ }
+        
+        /* 新增设备适配样式 */
+        @media (max-width: 768px) { /* 手机端（<=768px） */
+            .countdown {
+                padding: 1.2rem;
+                width: 95%;
+            }
+            .countdown-digit {
+                font-size: clamp(1.8rem, 6vw, 3rem); /* 缩小字体 */
+            }
+            .countdown-label {
+                font-size: 1rem;
+            }
+            .motivation {
+                font-size: 1.1rem;
+                margin-top: 1.5rem;
+            }
+            .text-4xl { /* 标题适配 */
+                font-size: 2.2rem;
+                margin-bottom: 6rem; /* 增加标题与倒计时间距 */
+            }
+        }
+
+        @media (min-width: 769px) { /* 电脑端（>768px） */
+            .countdown {
+                padding: 2.5rem;
+                width: 70%; /* 电脑端宽度适配 */
+            }
+            .countdown-digit {
+                font-size: clamp(3rem, 8vw, 5rem); /* 增大字体 */
+            }
+            .motivation {
+                font-size: 1.6rem;
+                margin-top: 3rem;
+            }
+            .text-4xl {
+                font-size: 3rem;
+                margin-bottom: 8rem; /* 增加标题与倒计时间距 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 原有 HTML 结构 -->
+    <div class="author-info">
+        by：青舟团队<br>
+        作者：天明<br>
+        QQ号：3570944928
+    </div>
+    <div class="text-4xl font-bold mb-8">中考倒计时</div>
+    <div class="countdown">
+        <!-- 倒计时数字结构 -->
+    </div>
+    <div class="motivation" id="motivation-text"></div>
+
+    <script>
+        // 原有 JavaScript 代码（设置日期、激励语、倒计时更新等）
+        const examDate = new Date('2025-06-13T09:00:00');
+        const motivationMessages = [ /* 原数组 */ ];
+        
+        // 新增：设备类型检测（可按需扩展功能）
+        function detectDeviceType() {
+            const isMobile = window.innerWidth <= 768;
+            const deviceType = isMobile ? '手机' : '电脑';
+            console.log(`当前设备：${deviceType}`); // 可用于调试或扩展功能
+            // 示例：根据设备类型执行其他操作
+            if (isMobile) {
+                // 手机端特殊逻辑（如调整更新频率）
+                // setInterval 可设置不同间隔
+            } else {
+                // 电脑端特殊逻辑
+            }
+        }
+
+        // 页面加载时检测
+        window.addEventListener('load', detectDeviceType);
+        // 窗口大小变化时重新检测
+        window.addEventListener('resize', detectDeviceType);
+
+        // 原有倒计时和激励语更新函数
+        function getRandomMotivation() { /* 原函数 */ }
+        function updateCountdown() { /* 原函数 */ }
+        function updateMotivation() { /* 原函数 */ }
+        
+        // 初始调用和定时器设置（保持原有逻辑）
+        updateCountdown();
+        updateMotivation();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        const motivationInterval = setInterval(updateMotivation, 60000);
+    </script>
+</body>
+</html>
